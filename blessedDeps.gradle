@@ -1,0 +1,8 @@
+rootProject.ext.springBootVersion='2.0.4.RELEASE'
+rootProject.ext.GRPC_VERSION = '1.9.0'
+rootProject.ext.GRPC_STARTER_VERSION = '2.1.5'
+rootProject.ext.kotlinVersion = '1.2.51'
+
+rootProject.ext.graphqlVersion = '5.0.2'
+
+rootProject.ext.graphqlJavaToolsVersion = "5.2.0"
