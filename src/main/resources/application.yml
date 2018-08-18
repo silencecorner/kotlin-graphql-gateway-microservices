@@ -1,0 +1,7 @@
+graphql:
+  servlet:
+    enabled: true
+    corsEnabled: true
+
+graphiql:
+  enabled: true
