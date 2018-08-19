@@ -1,19 +1,19 @@
 package com.github.silencecorner.scalar
 
+import graphql.language.FloatValue
 import graphql.language.StringValue
 import graphql.schema.Coercing
 import graphql.schema.CoercingSerializeException
 import graphql.schema.GraphQLScalarType
-import org.springframework.stereotype.Component
 import java.math.BigDecimal
 
-@Component
-class MoneyScalar : GraphQLScalarType("Money", "Money", object : Coercing<Double, Double> {
+class GraphQLMoney : GraphQLScalarType("Money", "Money", object : Coercing<Double, Double> {
     fun convertImpl(input: Any): Double? = when (input) {
-        is Number -> BigDecimal(input.toDouble()).toDouble()
+        is FloatValue -> input.value.toDouble()
+        is Number -> input.toDouble()
         is StringValue ->
             try {
-                BigDecimal(input.toString()).toDouble()
+                BigDecimal(input.value).toDouble()
             } catch (e : NumberFormatException) {
                 null
             }

@@ -1,5 +1,7 @@
 package com.github.silencecorner.types
 
+import java.time.LocalDateTime
+
 /**
  * @author hai
  * description
@@ -33,4 +35,10 @@ type OrderedProduct {
     price: Float!
     quantity: Int!
 }*/
-data class Product(val id: String, val name: String, val description: String, val price: Double)
+data class Product(
+        val id: String,
+        val name: String,
+        val description: String,
+        val price: Double,
+        val createdAt: LocalDateTime ? = LocalDateTime.now()
+)

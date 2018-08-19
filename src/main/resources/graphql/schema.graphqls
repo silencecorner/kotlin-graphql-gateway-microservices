@@ -12,6 +12,7 @@ type Product {
   name: String!
   description: String!
   price: Money!
+  createdAt: UnixTime!
 }
 
 type Order {
@@ -42,6 +43,7 @@ input ProductInput {
   name: String!
   description: String!
   price: Money!
+  shippingDateTime: UnixTime
 }
 
 input OrderProductInput {
