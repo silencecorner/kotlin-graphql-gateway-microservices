@@ -1,10 +1,26 @@
 scalar UnixTime
 scalar Money
 
+type PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean
+  hasNextPage: Boolean
+}
+
 type Account {
   id: String!
   name: String!
   orders: [Order!]!
+}
+type AccountConnection{
+  edges: [AccountEdge]!
+  pageInfo: PageInfo
+}
+
+type AccountEdge{
+  node: Account!
+  cursor: String!
 }
 
 type Product {
@@ -13,6 +29,15 @@ type Product {
   description: String!
   price: Money!
   createdAt: UnixTime!
+}
+type ProductConnection{
+  edges: [ProductEdge]!
+  pageInfo: PageInfo
+}
+
+type ProductEdge{
+  node: Product!
+  cursor: String!
 }
 
 type Order {
@@ -30,10 +55,6 @@ type OrderedProduct {
   quantity: Int!
 }
 
-input PaginationInput {
-  skip: Int
-  take: Int
-}
 
 input AccountInput {
   name: String!
@@ -63,6 +84,8 @@ type Mutation {
 }
 
 type Query {
-  accounts(pagination: PaginationInput, id: String): [Account!]!
-  products(pagination: PaginationInput, query: String, id: String): [Product!]!
+  accounts(first: Int,after: String, id: String): AccountConnection
+  products(first: Int,after: String, query: String, id: String): ProductConnection
 }
+
+

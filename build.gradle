@@ -34,6 +34,7 @@ compileTestKotlin {
 
 repositories {
 	maven {url 'https://maven.aliyun.com/repository/central' }
+	maven { url "http://dl.bintray.com/graphql-java-kickstart/releases" }
 }
 
 test {
@@ -56,9 +57,11 @@ dependencies {
 	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
 
-	compile "com.graphql-java:graphql-spring-boot-starter:${graphqlVersion}"
+	compile "com.graphql-java-kickstart:graphql-spring-boot-starter:${graphqlVersion}"
 
-	compile "com.graphql-java:graphiql-spring-boot-starter:${graphqlVersion}"
+	compile "com.graphql-java-kickstart:graphiql-spring-boot-starter:${graphqlVersion}"
 
-	compile "com.graphql-java:graphql-java-tools:${graphqlJavaToolsVersion}"
+	compile "com.graphql-java-kickstart:voyager-spring-boot-starter:${graphqlVersion}"
+
+	compile "com.graphql-java-kickstart:graphql-java-tools:${graphqlJavaToolsVersion}"
 }

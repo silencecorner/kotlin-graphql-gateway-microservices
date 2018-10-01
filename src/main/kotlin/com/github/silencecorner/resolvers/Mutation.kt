@@ -30,7 +30,8 @@ class Mutation : GraphQLMutationResolver {
                 product.name,
                 product.description,
                 product.price?.unaryPlus()
-                ?: 0.00
+                ?: 0.00,
+                LocalDateTime.MIN
         )
     }
 
