@@ -9,8 +9,8 @@ compile "com.graphql-java:graphiql-spring-boot-starter:${graphqlVersion}"
 compile "com.graphql-java:graphql-java-tools:${graphqlJavaToolsVersion}"
 ```
 ```
-rootProject.ext.graphqlVersion = '5.0.2'
-rootProject.ext.graphqlJavaToolsVersion = "5.2.0"
+rootProject.ext.graphqlVersion = '5.0.3'
+rootProject.ext.graphqlJavaToolsVersion = "5.3.1"
 ```
 ### 定义scalar
 #### *.graphqls文件中定义
